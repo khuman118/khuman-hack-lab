@@ -7,291 +7,984 @@
 <title>Projects | KHUMAN HACK LAB</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    background:#050608;
-    color:white;
-    font-family:Arial,sans-serif;
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
-nav{
-    padding:20px 7%;
+body{
+    background:#030609;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:82px;
+    padding:0 7%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #142018;
-    background:#050608;
+    justify-content:space-between;
+
+    background:#030609;
+    border-bottom:1px solid #17212b;
+
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
-    color:#00ff88;
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-nav a{
-    color:#aaa;
+    color:white;
     text-decoration:none;
-    margin-left:18px;
-    font-size:13px;
+    font-size:23px;
+    font-weight:800;
 }
 
-nav a:hover{
-    color:#00ff88;
+.logo span{
+    color:#168cff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#aeb7c0;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#168cff;
+}
+
+.request{
+    border:1px solid #168cff;
+    padding:10px 17px;
+    border-radius:30px;
+}
+
+.request:hover{
+    background:#168cff;
+    color:white !important;
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:440px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.72)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+
+    padding:80px 7%;
+}
+
+.label{
+    color:#168cff;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,72px);
+    letter-spacing:-3px;
+
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b4bdc5;
+    max-width:650px;
+
+    line-height:1.8;
+}
+
+/* PROJECTS */
+
+.projects-section{
+    padding:100px 7%;
+    background:#05080c;
 }
 
 .container{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:80px 20px;
 }
 
-.heading{
-    text-align:center;
-    margin-bottom:55px;
+.section-title{
+    font-size:40px;
+    letter-spacing:-1.5px;
+    margin-bottom:15px;
 }
 
-.heading span{
-    color:#00ff88;
-    font-size:13px;
-    letter-spacing:4px;
+.intro{
+    color:#7f8993;
+    max-width:650px;
+    line-height:1.8;
 }
 
-.heading h1{
-    font-size:48px;
-    margin:15px 0;
-}
-
-.heading p{
-    color:#999;
-    line-height:1.6;
-}
+/* PROJECT GRID */
 
 .projects{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:22px;
+
+    margin-top:50px;
 }
 
 .project{
-    background:#080b09;
-    border:1px solid #18251e;
+    background:#0b1015;
+
+    border:1px solid #1c2731;
+
     border-radius:12px;
-    padding:30px;
+
+    overflow:hidden;
+
     transition:.3s;
 }
 
 .project:hover{
-    transform:translateY(-5px);
-    border-color:#00ff88;
-    box-shadow:0 0 25px rgba(0,255,136,.08);
+    transform:translateY(-6px);
+    border-color:#28618e;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+}
+
+/* PROJECT VISUAL */
+
+.project-visual{
+    height:260px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background-size:cover;
+    background-position:center;
+}
+
+.project:nth-child(1) .project-visual{
+    background:
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.75)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.project:nth-child(2) .project-visual{
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(22,140,255,.28),
+            transparent 40%
+        ),
+        #071018;
+}
+
+.project:nth-child(3) .project-visual{
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(80,160,255,.2),
+            transparent 38%
+        ),
+        #080c11;
+}
+
+.project:nth-child(4) .project-visual{
+    background:
+        linear-gradient(
+            135deg,
+            #0b1219,
+            #05080c
+        );
+}
+
+/* FAKE SCREEN */
+
+.screen{
+    position:absolute;
+
+    top:35px;
+    left:10%;
+    right:10%;
+    bottom:30px;
+
+    background:#080d12;
+
+    border:1px solid #30404e;
+
+    border-radius:8px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.6);
+}
+
+.screen-top{
+    height:28px;
+
+    border-bottom:1px solid #202c36;
+
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+    padding-left:10px;
+}
+
+.dot{
+    width:6px;
+    height:6px;
+
+    background:#3b4854;
+
+    border-radius:50%;
+}
+
+.code{
+    padding:22px;
+}
+
+.line{
+    height:7px;
+
+    background:#253441;
+
+    border-radius:5px;
+
+    margin-bottom:10px;
+}
+
+.line.blue{
+    background:#15568b;
+}
+
+.line.short{
+    width:40%;
+}
+
+.line.medium{
+    width:65%;
+}
+
+.line.long{
+    width:90%;
+}
+
+/* PROJECT CONTENT */
+
+.project-content{
+    padding:30px;
 }
 
 .project-number{
-    color:#00ff88;
-    font-size:13px;
-    letter-spacing:3px;
-    margin-bottom:20px;
+    color:#168cff;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
 }
 
 .project h2{
+    font-size:24px;
     margin-bottom:12px;
-    font-size:23px;
 }
 
 .project p{
-    color:#999;
-    line-height:1.7;
+    color:#7e8993;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
 }
 
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.tag{
+    color:#aeb8c1;
+
+    border:1px solid #25323d;
+
+    padding:6px 9px;
+
+    border-radius:4px;
+
+    font-size:10px;
+
+    letter-spacing:.5px;
+}
+
+/* STATUS */
+
 .status{
-    display:inline-block;
-    margin-top:22px;
-    padding:7px 12px;
-    border:1px solid #1d3528;
-    border-radius:20px;
-    color:#00ff88;
+    margin-top:20px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    color:#76818b;
+
+    font-size:11px;
+}
+
+.status-dot{
+    width:6px;
+    height:6px;
+
+    background:#168cff;
+
+    border-radius:50%;
+}
+
+/* CTA */
+
+.cta-section{
+    padding:80px 7%;
+    background:#030609;
+}
+
+.cta{
+    max-width:1200px;
+    margin:auto;
+
+    padding:50px;
+
+    border:1px solid #23303b;
+    border-radius:12px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(22,140,255,.13),
+            transparent 35%
+        ),
+        #0b1015;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.cta h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#78838d;
+}
+
+.cta a{
+    background:#168cff;
+    color:white;
+
+    padding:14px 21px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    white-space:nowrap;
+}
+
+.cta a:hover{
+    background:#3aa0ff;
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px 7%;
+
+    border-top:1px solid #172029;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#606b75;
+
     font-size:12px;
 }
 
-.center{
-    text-align:center;
-    margin-top:50px;
-}
+/* MOBILE */
 
-.button{
-    display:inline-block;
-    padding:14px 24px;
-    background:#00ff88;
-    color:#03100a;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:6px;
-}
+@media(max-width:850px){
 
-@media(max-width:700px){
-
-    nav{
-        padding:18px 5%;
+    .navbar{
+        padding:0 6%;
     }
 
-    nav a{
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
         display:none;
+
+        position:absolute;
+        top:82px;
+        left:0;
+
+        width:100%;
+
+        padding:10px 6% 20px;
+
+        background:#030609;
+
+        border-bottom:1px solid #17212b;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:0;
     }
 
-    .logo{
-        font-size:17px;
+    .nav-links.active{
+        display:flex;
     }
 
-    .container{
-        padding:55px 18px;
+    .nav-links a{
+        padding:15px 0;
+        border-bottom:1px solid #172029;
     }
 
-    .heading h1{
-        font-size:38px;
+    .nav-links .request{
+        text-align:center;
+        margin-top:10px;
+    }
+
+    .hero{
+        min-height:390px;
+        background-position:60% center;
+    }
+
+    .hero-content{
+        padding:70px 6%;
+    }
+
+    .projects-section,
+    .cta-section{
+        padding-left:6%;
+        padding-right:6%;
     }
 
     .projects{
         grid-template-columns:1fr;
     }
+
+    .cta{
+        padding:35px 25px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    footer{
+        padding-left:6%;
+        padding-right:6%;
+
+        flex-direction:column;
+        gap:10px;
+    }
 }
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .project-visual{
+        height:230px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<nav>
+<!-- NAVBAR -->
 
-    <div class="logo">
-        KHUMAN HACK LAB
-    </div>
+<nav class="navbar">
 
-    <div>
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
+    <a href="index.html" class="logo">
+        KHUMAN <span>HACK LAB</span>
+    </a>
 
-</nav>
+    <button class="menu" onclick="toggleMenu()">
+        ☰
+    </button>
 
-<main class="container">
+    <div class="nav-links" id="navLinks">
 
-    <div class="heading">
+        <a href="index.html">Home</a>
 
-        <span>MY WORK</span>
+        <a href="services.html">Services</a>
 
-        <h1>Projects</h1>
+        <a href="projects.html">Projects</a>
 
-        <p>
-            Projects will be added here as they are completed.
-        </p>
+        <a href="about.html">About</a>
 
-    </div>
+        <a href="contact.html">Contact</a>
 
-
-    <div class="projects">
-
-        <div class="project">
-
-            <div class="project-number">
-                PROJECT 01
-            </div>
-
-            <h2>KHUMAN HACK LAB</h2>
-
-            <p>
-                A personal technology and cybersecurity-focused
-                website created to showcase projects and receive
-                digital project requests.
-            </p>
-
-            <div class="status">
-                CURRENT PROJECT
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                PROJECT 02
-            </div>
-
-            <h2>COMING SOON</h2>
-
-            <p>
-                Future website, AI or technology projects will
-                be displayed here after they are completed.
-            </p>
-
-            <div class="status">
-                IN DEVELOPMENT
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                PROJECT 03
-            </div>
-
-            <h2>YOUR PROJECT</h2>
-
-            <p>
-                Your project could be the next one featured
-                on KHUMAN HACK LAB.
-            </p>
-
-            <div class="status">
-                OPEN FOR REQUESTS
-            </div>
-
-        </div>
-
-
-        <div class="project">
-
-            <div class="project-number">
-                PROJECT 04
-            </div>
-
-            <h2>MORE COMING SOON</h2>
-
-            <p>
-                New digital projects and experiments will be
-                added here over time.
-            </p>
-
-            <div class="status">
-                FUTURE PROJECT
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="center">
-
-        <a href="request.html" class="button">
-            START A PROJECT
+        <a href="request.html" class="request">
+            Request a Project
         </a>
 
     </div>
 
-</main>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="label">
+            KHUMAN HACK LAB
+        </div>
+
+        <h1>
+            Projects
+        </h1>
+
+        <p>
+            A collection of personal technology projects,
+            experiments and work currently being developed.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects-section">
+
+    <div class="container">
+
+        <div class="label">
+            Selected Work
+        </div>
+
+        <h2 class="section-title">
+            Things I'm building.
+        </h2>
+
+        <p class="intro">
+            These projects represent my current learning,
+            experimentation and development work.
+        </p>
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project">
+
+                <div class="project-visual">
+
+                    <div class="screen">
+
+                        <div class="screen-top">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                        <div class="code">
+
+                            <div class="line blue short"></div>
+                            <div class="line long"></div>
+                            <div class="line medium"></div>
+                            <div class="line blue long"></div>
+                            <div class="line short"></div>
+                            <div class="line medium"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h2>
+                        KHUMAN HACK LAB
+                    </h2>
+
+                    <p>
+                        A personal technology website designed
+                        to showcase digital projects and receive
+                        project requests.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            HTML
+                        </span>
+
+                        <span class="tag">
+                            CSS
+                        </span>
+
+                        <span class="tag">
+                            JAVASCRIPT
+                        </span>
+
+                    </div>
+
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        Currently developing
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project">
+
+                <div class="project-visual">
+
+                    <div class="screen">
+
+                        <div class="screen-top">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                        <div class="code">
+
+                            <div class="line blue medium"></div>
+                            <div class="line long"></div>
+                            <div class="line short"></div>
+                            <div class="line blue long"></div>
+                            <div class="line medium"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h2>
+                        AI PROJECT
+                    </h2>
+
+                    <p>
+                        An experimental project exploring how
+                        AI tools can be used in practical digital
+                        workflows.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            AI
+                        </span>
+
+                        <span class="tag">
+                            AUTOMATION
+                        </span>
+
+                    </div>
+
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        In development
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project">
+
+                <div class="project-visual">
+
+                    <div class="screen">
+
+                        <div class="screen-top">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                        <div class="code">
+
+                            <div class="line short"></div>
+                            <div class="line blue long"></div>
+                            <div class="line medium"></div>
+                            <div class="line long"></div>
+                            <div class="line blue short"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+                    <h2>
+                        WEB EXPERIMENTS
+                    </h2>
+
+                    <p>
+                        Small website experiments created while
+                        learning modern layouts, responsive design
+                        and front-end development.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            WEB
+                        </span>
+
+                        <span class="tag">
+                            UI
+                        </span>
+
+                        <span class="tag">
+                            RESPONSIVE
+                        </span>
+
+                    </div>
+
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        Ongoing
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project">
+
+                <div class="project-visual">
+
+                    <div class="screen">
+
+                        <div class="screen-top">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                        <div class="code">
+
+                            <div class="line blue short"></div>
+                            <div class="line medium"></div>
+                            <div class="line long"></div>
+                            <div class="line blue medium"></div>
+                            <div class="line short"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 04
+                    </div>
+
+                    <h2>
+                        MORE COMING SOON
+                    </h2>
+
+                    <p>
+                        More technology projects will be added
+                        as I continue learning and building.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            FUTURE
+                        </span>
+
+                        <span class="tag">
+                            TECHNOLOGY
+                        </span>
+
+                    </div>
+
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        Planned
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+    <div class="cta">
+
+        <div>
+
+            <h2>
+                Have an idea?
+            </h2>
+
+            <p>
+                Your project could become the next one.
+            </p>
+
+        </div>
+
+        <a href="request.html">
+            Request a Project →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 KHUMAN HACK LAB
+    </div>
+
+    <div>
+        Web • AI • Digital Projects
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+</script>
 
 </body>
-</html>
+    </html>
