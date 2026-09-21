@@ -7,95 +7,245 @@
 <title>Services | KHUMAN HACK LAB</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    background:#050608;
-    color:white;
-    font-family:Arial,sans-serif;
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
-nav{
-    padding:20px 7%;
+body{
+    background:#030609;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:82px;
+    padding:0 7%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #142018;
-    background:#050608;
+    justify-content:space-between;
+
+    background:#030609;
+    border-bottom:1px solid #17212b;
+
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
-    color:#00ff88;
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-nav a{
-    color:#aaa;
+    color:white;
     text-decoration:none;
-    margin-left:18px;
-    font-size:13px;
+    font-size:23px;
+    font-weight:800;
 }
 
-nav a:hover{
-    color:#00ff88;
+.logo span{
+    color:#168cff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#aeb7c0;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#168cff;
+}
+
+.request{
+    border:1px solid #168cff;
+    padding:10px 17px;
+    border-radius:30px;
+}
+
+.request:hover{
+    background:#168cff;
+    color:white !important;
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:430px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.9),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.72)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center 42%;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:80px 7%;
+}
+
+.label{
+    color:#168cff;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,72px);
+    letter-spacing:-3px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b4bdc5;
+    max-width:650px;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* SERVICES */
+
+.services-section{
+    padding:100px 7%;
+    background:#05080c;
 }
 
 .container{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:80px 20px;
 }
 
-.heading{
-    text-align:center;
-    margin-bottom:55px;
+.section-title{
+    font-size:40px;
+    letter-spacing:-1.5px;
+    margin-bottom:15px;
 }
 
-.heading span{
-    color:#00ff88;
-    font-size:13px;
-    letter-spacing:4px;
-}
-
-.heading h1{
-    font-size:48px;
-    margin:15px 0;
-}
-
-.heading p{
-    color:#999;
+.section-intro{
+    color:#7f8993;
+    max-width:650px;
+    line-height:1.8;
 }
 
 .services{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+
+    margin-top:50px;
 }
 
 .card{
-    border:1px solid #18251e;
-    background:#080b09;
+    position:relative;
+
+    min-height:300px;
+
     padding:30px;
+
+    background:#0b1015;
+
+    border:1px solid #1c2731;
+
     border-radius:10px;
+
+    overflow:hidden;
+
     transition:.3s;
 }
 
+.card::after{
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    right:-80px;
+    bottom:-80px;
+
+    background:#168cff;
+
+    opacity:.08;
+
+    border-radius:50%;
+
+    filter:blur(25px);
+}
+
 .card:hover{
-    border-color:#00ff88;
-    transform:translateY(-5px);
-    box-shadow:0 0 25px rgba(0,255,136,.08);
+    transform:translateY(-6px);
+    border-color:#27618e;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+}
+
+.number{
+    color:#168cff;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bold;
 }
 
 .icon{
-    font-size:30px;
-    margin-bottom:18px;
+    width:52px;
+    height:52px;
+
+    margin:30px 0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #263642;
+    border-radius:8px;
+
+    color:#168cff;
+
+    font-size:22px;
+
+    background:#080d12;
 }
 
 .card h2{
@@ -104,172 +254,597 @@ nav a:hover{
 }
 
 .card p{
-    color:#999;
-    line-height:1.6;
+    color:#78838d;
+    font-size:14px;
+    line-height:1.8;
 }
 
-.button{
-    display:inline-block;
-    margin-top:45px;
-    padding:14px 24px;
-    background:#00ff88;
-    color:#03100a;
+/* PROCESS */
+
+.process{
+    padding:100px 7%;
+
+    background:#030609;
+
+    border-top:1px solid #141d25;
+}
+
+.process-grid{
+    max-width:1200px;
+    margin:45px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.step{
+    padding:25px;
+
+    border-left:1px solid #26323d;
+}
+
+.step-number{
+    color:#168cff;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.step h3{
+    margin:15px 0 8px;
+    font-size:17px;
+}
+
+.step p{
+    color:#737e88;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* CTA */
+
+.cta-section{
+    padding:80px 7%;
+    background:#05080c;
+}
+
+.cta{
+    max-width:1200px;
+    margin:auto;
+
+    padding:50px;
+
+    border:1px solid #23303b;
+    border-radius:12px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(22,140,255,.13),
+            transparent 35%
+        ),
+        #0b1015;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#78838d;
+}
+
+.cta a{
+    background:#168cff;
+    color:white;
+
+    padding:14px 21px;
+
+    border-radius:5px;
+
     text-decoration:none;
     font-weight:bold;
-    border-radius:6px;
+
+    white-space:nowrap;
 }
 
-.center{
-    text-align:center;
+.cta a:hover{
+    background:#3aa0ff;
 }
 
-@media(max-width:700px){
+/* FOOTER */
 
-    nav{
-        padding:18px 5%;
+footer{
+    padding:30px 7%;
+
+    border-top:1px solid #172029;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#606b75;
+
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .navbar{
+        padding:0 6%;
     }
 
-    nav a{
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
         display:none;
+
+        position:absolute;
+        top:82px;
+        left:0;
+
+        width:100%;
+
+        padding:10px 6% 20px;
+
+        background:#030609;
+
+        border-bottom:1px solid #17212b;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:0;
     }
 
-    .logo{
-        font-size:17px;
+    .nav-links.active{
+        display:flex;
     }
 
-    .container{
-        padding:55px 18px;
+    .nav-links a{
+        padding:15px 0;
+        border-bottom:1px solid #172029;
     }
 
-    .heading h1{
-        font-size:38px;
+    .nav-links .request{
+        text-align:center;
+        margin-top:10px;
+    }
+
+    .hero{
+        min-height:390px;
+        background-position:62% center;
+    }
+
+    .hero-content{
+        padding:70px 6%;
+    }
+
+    .services-section,
+    .process,
+    .cta-section{
+        padding-left:6%;
+        padding-right:6%;
     }
 
     .services{
         grid-template-columns:1fr;
     }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta{
+        padding:35px 25px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    footer{
+        padding-left:6%;
+        padding-right:6%;
+        flex-direction:column;
+        gap:10px;
+    }
 }
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<nav>
+<!-- NAVBAR -->
 
-    <div class="logo">
-        KHUMAN HACK LAB
-    </div>
+<nav class="navbar">
 
-    <div>
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </div>
+    <a href="index.html" class="logo">
+        KHUMAN <span>HACK LAB</span>
+    </a>
 
-</nav>
+    <button class="menu" onclick="toggleMenu()">
+        ☰
+    </button>
 
-<main class="container">
+    <div class="nav-links" id="navLinks">
 
-    <div class="heading">
+        <a href="index.html">Home</a>
 
-        <span>WHAT I CAN WORK ON</span>
+        <a href="services.html">Services</a>
 
-        <h1>Services</h1>
+        <a href="projects.html">Projects</a>
 
-        <p>
-            Digital projects and technology-related assistance.
-        </p>
+        <a href="about.html">About</a>
 
-    </div>
+        <a href="contact.html">Contact</a>
 
-
-    <div class="services">
-
-        <div class="card">
-            <div class="icon">🌐</div>
-
-            <h2>Website Development</h2>
-
-            <p>
-                Simple and modern websites for personal,
-                school, portfolio and small digital projects.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🤖</div>
-
-            <h2>AI & Automation</h2>
-
-            <p>
-                Help with AI-based ideas, simple automation
-                and technology projects.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🔐</div>
-
-            <h2>Cybersecurity</h2>
-
-            <p>
-                Legal and authorized cybersecurity learning,
-                security guidance and basic defensive assistance.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">🛠️</div>
-
-            <h2>Website Troubleshooting</h2>
-
-            <p>
-                Help finding and fixing common problems in
-                HTML, CSS and basic website projects.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">💻</div>
-
-            <h2>Digital Projects</h2>
-
-            <p>
-                Assistance with other small technology and
-                digital projects.
-            </p>
-        </div>
-
-
-        <div class="card">
-            <div class="icon">📩</div>
-
-            <h2>Project Requests</h2>
-
-            <p>
-                Have a different idea? Send the details and
-                explain what you need.
-            </p>
-        </div>
-
-    </div>
-
-
-    <div class="center">
-
-        <a href="request.html" class="button">
-            REQUEST A PROJECT
+        <a href="request.html" class="request">
+            Request a Project
         </a>
 
     </div>
 
-</main>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="label">
+            KHUMAN HACK LAB
+        </div>
+
+        <h1>
+            Services
+        </h1>
+
+        <p>
+            Digital services and project work focused on
+            web development, AI, automation and authorized
+            cybersecurity learning.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services-section">
+
+    <div class="container">
+
+        <div class="label">
+            What I Can Work On
+        </div>
+
+        <h2 class="section-title">
+            Digital solutions.
+        </h2>
+
+        <p class="section-intro">
+            Choose an area that matches your project.
+            Requests are reviewed before work begins.
+        </p>
+
+
+        <div class="services">
+
+
+            <div class="card">
+
+                <div class="number">
+                    01
+                </div>
+
+                <div class="icon">
+                    &lt;/&gt;
+                </div>
+
+                <h2>
+                    Website Development
+                </h2>
+
+                <p>
+                    Responsive websites and landing pages
+                    using HTML, CSS and JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    02
+                </div>
+
+                <div class="icon">
+                    AI
+                </div>
+
+                <h2>
+                    AI & Automation
+                </h2>
+
+                <p>
+                    Exploring AI tools, useful workflows
+                    and automation ideas for digital projects.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    03
+                </div>
+
+                <div class="icon">
+                    🔒
+                </div>
+
+                <h2>
+                    Cybersecurity
+                </h2>
+
+                <p>
+                    Security concepts, basic guidance and
+                    authorized testing for systems you own
+                    or have permission to assess.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    04
+                </div>
+
+                <div class="icon">
+                    ⚙
+                </div>
+
+                <h2>
+                    Website Troubleshooting
+                </h2>
+
+                <p>
+                    Help identifying common website,
+                    HTML, CSS and JavaScript problems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    05
+                </div>
+
+                <div class="icon">
+                    ◈
+                </div>
+
+                <h2>
+                    Digital Projects
+                </h2>
+
+                <p>
+                    Small web and technology projects
+                    built around specific requirements.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="number">
+                    06
+                </div>
+
+                <div class="icon">
+                    →
+                </div>
+
+                <h2>
+                    Project Requests
+                </h2>
+
+                <p>
+                    Have another digital idea?
+                    Send the requirements through the
+                    project request form.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="label">
+            Process
+        </div>
+
+        <h2 class="section-title">
+            How a project starts.
+        </h2>
+
+
+        <div class="process-grid">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Request
+                </h3>
+
+                <p>
+                    Tell me what you want to build.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Review
+                </h3>
+
+                <p>
+                    Understand the requirements
+                    and project scope.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    Work on the agreed project.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Deliver
+                </h3>
+
+                <p>
+                    Provide the completed digital work.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+    <div class="cta">
+
+        <div>
+
+            <h2>
+                Have a project in mind?
+            </h2>
+
+            <p>
+                Send the details directly through the website.
+            </p>
+
+        </div>
+
+        <a href="request.html">
+            Request a Project →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 KHUMAN HACK LAB
+    </div>
+
+    <div>
+        Web • AI • Digital Projects
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+</script>
 
 </body>
-  </html>
+    </html>
