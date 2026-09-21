@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | KHUMAN HACK LAB</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050608;
+    color:white;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+}
+
+nav{
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #142018;
+    background:#050608;
+}
+
+.logo{
+    color:#00ff88;
+    font-size:21px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#00ff88;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.heading span{
+    color:#00ff88;
+    font-size:13px;
+    letter-spacing:4px;
+}
+
+.heading h1{
+    font-size:48px;
+    margin:15px 0;
+}
+
+.heading p{
+    color:#999;
+}
+
+.contact-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.card{
+    background:#080b09;
+    border:1px solid #18251e;
+    border-radius:12px;
+    padding:30px;
+}
+
+.card h2{
+    color:#00ff88;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#999;
+    line-height:1.7;
+}
+
+.button{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 24px;
+    background:#00ff88;
+    color:#03100a;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:6px;
+}
+
+.note{
+    margin-top:30px;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .container{
+        padding:55px 18px;
+    }
+
+    .heading h1{
+        font-size:38px;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        KHUMAN HACK LAB
+    </div>
+
+    <div>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <div class="heading">
+
+        <span>GET IN TOUCH</span>
+
+        <h1>Contact</h1>
+
+        <p>
+            Have a project or digital idea?
+            Send the details through the request page.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <div class="card">
+
+            <h2>Project Requests</h2>
+
+            <p>
+                For website, AI, technology or authorized
+                cybersecurity-related requests, use the
+                project request form.
+            </p>
+
+            <a href="request.html" class="button">
+                SEND A REQUEST
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>KHUMAN HACK LAB</h2>
+
+            <p>
+                A personal technology project focused on
+                learning, building and working on digital
+                projects.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <p class="note">
+        Cybersecurity requests must involve systems you own
+        or have permission to test.
+    </p>
+
+</main>
+
+</body>
+</html>
