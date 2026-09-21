@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KHUMAN HACK LAB</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050608;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+}
+
+/* NAVBAR */
+nav{
+    width:100%;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #142018;
+    background:rgba(5,6,8,.95);
+}
+
+.logo{
+    color:#00ff88;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#00ff88;
+}
+
+/* HERO */
+.hero{
+    min-height:calc(100vh - 70px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#00ff88;
+    opacity:.08;
+    filter:blur(100px);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+
+.tag{
+    color:#00ff88;
+    font-size:13px;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(45px,10vw,90px);
+    letter-spacing:5px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#bbb;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 25px;
+    background:#00ff88;
+    color:#03100a;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:6px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(0,255,136,.4);
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">KHUMAN HACK LAB</div>
+
+    <div>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">WELCOME TO THE LAB</div>
+
+        <h1>KHUMAN</h1>
+
+        <p class="subtitle">
+            Cybersecurity • Technology • Digital Solutions
+        </p>
+
+        <a href="request.html" class="btn">
+            REQUEST A PROJECT
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+  </html>
