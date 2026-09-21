@@ -1,229 +1,919 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>About | KHUMAN HACK LAB</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    background:#050608;
-    color:white;
-    font-family:Arial,sans-serif;
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
-nav{
-    padding:20px 7%;
+body{
+    background:#030609;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height:82px;
+    padding:0 7%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #142018;
-    background:#050608;
+    justify-content:space-between;
+
+    background:#030609;
+
+    border-bottom:1px solid #17212b;
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
 }
 
 .logo{
-    color:#00ff88;
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-nav a{
-    color:#aaa;
+    color:white;
     text-decoration:none;
-    margin-left:18px;
-    font-size:13px;
+
+    font-size:23px;
+    font-weight:800;
 }
 
-nav a:hover{
-    color:#00ff88;
+.logo span{
+    color:#168cff;
 }
 
-.container{
-    max-width:900px;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#aeb7c0;
+    text-decoration:none;
+    font-size:14px;
+
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#168cff;
+}
+
+.request{
+    border:1px solid #168cff;
+    padding:10px 17px;
+    border-radius:30px;
+}
+
+.request:hover{
+    background:#168cff;
+    color:white !important;
+}
+
+.menu{
+    display:none;
+
+    background:none;
+    border:0;
+
+    color:white;
+    font-size:27px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:470px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.72)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+
     margin:auto;
-    padding:80px 20px;
+
+    padding:80px 7%;
 }
 
-.heading{
-    text-align:center;
-    margin-bottom:50px;
-}
+.label{
+    color:#168cff;
 
-.heading span{
-    color:#00ff88;
-    font-size:13px;
-    letter-spacing:4px;
-}
+    font-size:11px;
 
-.heading h1{
-    font-size:48px;
-    margin-top:15px;
-}
+    letter-spacing:3px;
 
-.card{
-    background:#080b09;
-    border:1px solid #18251e;
-    border-radius:12px;
-    padding:35px;
-    margin-bottom:22px;
-}
+    text-transform:uppercase;
 
-.card h2{
-    color:#00ff88;
     margin-bottom:15px;
 }
 
-.card p{
-    color:#aaa;
+.hero h1{
+    font-size:clamp(45px,7vw,72px);
+
+    letter-spacing:-3px;
+
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b4bdc5;
+
+    max-width:650px;
+
     line-height:1.8;
+
     font-size:16px;
 }
 
-.highlight{
-    border-left:3px solid #00ff88;
-    padding-left:20px;
-    margin-top:20px;
+/* ================= ABOUT ================= */
+
+.about-section{
+    padding:100px 7%;
+
+    background:#05080c;
 }
 
-.button{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 24px;
-    background:#00ff88;
-    color:#03100a;
-    text-decoration:none;
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:.8fr 1.2fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+/* PROFILE */
+
+.profile{
+    min-height:420px;
+
+    position:relative;
+
+    border:1px solid #202d38;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.28),
+            rgba(0,0,0,.72)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:28px;
+}
+
+.profile-box{
+    width:100%;
+
+    padding:22px;
+
+    background:rgba(4,8,12,.83);
+
+    border:1px solid #293641;
+
+    border-radius:9px;
+
+    backdrop-filter:blur(10px);
+}
+
+.profile-box small{
+    color:#73808b;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.profile-box h3{
+    margin-top:8px;
+
+    font-size:23px;
+}
+
+.profile-box p{
+    color:#78838d;
+
+    font-size:13px;
+
+    margin-top:6px;
+}
+
+/* TEXT */
+
+.about-text h2{
+    font-size:42px;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#858f99;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+    font-size:15px;
+}
+
+/* ================= INTERESTS ================= */
+
+.interests{
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+}
+
+.interest{
+    padding:25px;
+
+    background:#0b1015;
+
+    border:1px solid #1c2731;
+
+    border-radius:9px;
+
+    transition:.25s;
+}
+
+.interest:hover{
+    transform:translateY(-4px);
+
+    border-color:#28618e;
+}
+
+.interest-number{
+    color:#168cff;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    margin-bottom:22px;
+}
+
+.interest h3{
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+.interest p{
+    color:#737e88;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+/* ================= PRINCIPLES ================= */
+
+.principles{
+    padding:100px 7%;
+
+    background:#030609;
+
+    border-top:1px solid #141e27;
+}
+
+.principle-grid{
+    max-width:1200px;
+
+    margin:45px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+.principle{
+    padding:30px;
+
+    background:#080d12;
+
+    border:1px solid #1c2731;
+
+    border-radius:10px;
+}
+
+.principle-number{
+    color:#168cff;
+
+    font-size:12px;
+
     font-weight:bold;
-    border-radius:6px;
 }
 
-.center{
-    text-align:center;
+.principle h3{
+    margin:18px 0 10px;
+
+    font-size:19px;
 }
 
-@media(max-width:700px){
+.principle p{
+    color:#77828c;
 
-    nav{
-        padding:18px 5%;
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+/* ================= CTA ================= */
+
+.cta-section{
+    padding:80px 7%;
+
+    background:#05080c;
+}
+
+.cta{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border:1px solid #23303b;
+
+    border-radius:12px;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(22,140,255,.13),
+            transparent 35%
+        ),
+        #0b1015;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.cta h2{
+    font-size:32px;
+
+    margin-bottom:8px;
+}
+
+.cta p{
+    color:#78838d;
+}
+
+.cta a{
+    background:#168cff;
+
+    color:white;
+
+    padding:14px 21px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+}
+
+.cta a:hover{
+    background:#3aa0ff;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 7%;
+
+    border-top:1px solid #172029;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#606b75;
+
+    font-size:12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .navbar{
+        padding:0 6%;
     }
 
-    nav a{
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
         display:none;
+
+        position:absolute;
+
+        top:82px;
+
+        left:0;
+
+        width:100%;
+
+        padding:10px 6% 20px;
+
+        background:#030609;
+
+        border-bottom:1px solid #17212b;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
     }
 
-    .logo{
-        font-size:17px;
+    .nav-links.active{
+        display:flex;
     }
 
-    .container{
-        padding:55px 18px;
+    .nav-links a{
+        padding:15px 0;
+
+        border-bottom:1px solid #172029;
     }
 
-    .heading h1{
-        font-size:38px;
+    .nav-links .request{
+        text-align:center;
+
+        margin-top:10px;
     }
 
-    .card{
-        padding:25px;
+    .hero{
+        min-height:390px;
+
+        background-position:60% center;
+    }
+
+    .hero-content{
+        padding:70px 6%;
+    }
+
+    .about-section,
+    .principles,
+    .cta-section{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .profile{
+        min-height:330px;
+    }
+
+    .about-text h2{
+        font-size:35px;
+    }
+
+    .interests{
+        grid-template-columns:1fr;
+    }
+
+    .principle-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        padding:35px 25px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    footer{
+        padding-left:6%;
+        padding-right:6%;
+
+        flex-direction:column;
+
+        gap:10px;
     }
 }
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:46px;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<nav>
 
-    <div class="logo">
-        KHUMAN HACK LAB
-    </div>
+<!-- ================= NAVBAR ================= -->
 
-    <div>
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        KHUMAN <span>HACK LAB</span>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="request.html" class="request">
+            Request a Project
+        </a>
+
     </div>
 
 </nav>
 
-<main class="container">
 
-    <div class="heading">
+<!-- ================= HERO ================= -->
 
-        <span>ABOUT THE LAB</span>
+<section class="hero">
 
-        <h1>About Me</h1>
+    <div class="hero-content">
+
+        <div class="label">
+            KHUMAN HACK LAB
+        </div>
+
+        <h1>
+            About Me
+        </h1>
+
+        <p>
+            A student learning technology by building,
+            experimenting and exploring modern digital ideas.
+        </p>
 
     </div>
 
+</section>
 
-    <div class="card">
 
-        <h2>Who is Khuman?</h2>
+<!-- ================= ABOUT ================= -->
 
-        <p>
-            Hi, I'm Khuman. I am a student who is interested in
-            technology, websites, artificial intelligence and
-            cybersecurity.
-        </p>
+<section class="about-section">
 
-        <div class="highlight">
+    <div class="container">
 
-            <p>
-                KHUMAN HACK LAB is my personal technology project,
-                where I learn, build and work on digital projects.
-            </p>
+        <div class="about-grid">
+
+
+            <!-- PHOTO -->
+
+            <div class="profile">
+
+                <div class="profile-box">
+
+                    <small>
+                        TECHNOLOGY / AI / SECURITY
+                    </small>
+
+                    <h3>
+                        Khuman
+                    </h3>
+
+                    <p>
+                        Student & technology learner
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEXT -->
+
+            <div class="about-text">
+
+                <div class="label">
+                    Who I Am
+                </div>
+
+                <h2>
+                    Learning by building.
+                </h2>
+
+                <p>
+                    I'm Khuman, a student interested in
+                    technology, websites, artificial
+                    intelligence and cybersecurity.
+                </p>
+
+                <p>
+                    KHUMAN HACK LAB is my personal technology
+                    project. I use it as a place to learn,
+                    experiment and build digital projects.
+                </p>
+
+                <p>
+                    My approach is simple: learn something,
+                    build something, test it, improve it,
+                    and keep learning.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- INTERESTS -->
+
+        <div class="interests">
+
+
+            <div class="interest">
+
+                <div class="interest-number">
+                    01
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Learning how websites are designed,
+                    developed and made responsive.
+                </p>
+
+            </div>
+
+
+            <div class="interest">
+
+                <div class="interest-number">
+                    02
+                </div>
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+                <p>
+                    Exploring AI tools and understanding
+                    practical ways technology can be used.
+                </p>
+
+            </div>
+
+
+            <div class="interest">
+
+                <div class="interest-number">
+                    03
+                </div>
+
+                <h3>
+                    Cybersecurity
+                </h3>
+
+                <p>
+                    Learning security concepts and
+                    responsible, authorized cybersecurity.
+                </p>
+
+            </div>
+
 
         </div>
 
     </div>
 
+</section>
 
-    <div class="card">
 
-        <h2>What I Am Learning</h2>
+<!-- ================= PRINCIPLES ================= -->
 
-        <p>
-            I am continuously learning about web development,
-            AI tools, cybersecurity concepts and modern
-            technology.
-        </p>
+<section class="principles">
+
+    <div class="container">
+
+        <div class="label">
+            My Approach
+        </div>
+
+        <h2>
+            Learn. Build. Improve.
+        </h2>
+
+
+        <div class="principle-grid">
+
+
+            <div class="principle">
+
+                <div class="principle-number">
+                    01
+                </div>
+
+                <h3>
+                    Learn
+                </h3>
+
+                <p>
+                    Understand new technologies and
+                    concepts step by step.
+                </p>
+
+            </div>
+
+
+            <div class="principle">
+
+                <div class="principle-number">
+                    02
+                </div>
+
+                <h3>
+                    Build
+                </h3>
+
+                <p>
+                    Turn what I learn into actual
+                    small digital projects.
+                </p>
+
+            </div>
+
+
+            <div class="principle">
+
+                <div class="principle-number">
+                    03
+                </div>
+
+                <h3>
+                    Improve
+                </h3>
+
+                <p>
+                    Test, fix problems and improve
+                    projects over time.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
 
-
-    <div class="card">
-
-        <h2>My Approach</h2>
-
-        <p>
-            I believe in learning by building real projects,
-            improving step by step and being honest about what
-            I can currently do.
-        </p>
-
-    </div>
+</section>
 
 
-    <div class="center">
+<!-- ================= CTA ================= -->
 
-        <a href="request.html" class="button">
-            SEND A PROJECT REQUEST
+<section class="cta-section">
+
+    <div class="cta">
+
+        <div>
+
+            <h2>
+                Want to build something?
+            </h2>
+
+            <p>
+                Send your project requirements directly.
+            </p>
+
+        </div>
+
+        <a href="request.html">
+            Request a Project →
         </a>
 
     </div>
 
-</main>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        © 2026 KHUMAN HACK LAB
+    </div>
+
+    <div>
+        Web • AI • Digital Projects
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+</script>
 
 </body>
-  </html>
+    </html>
