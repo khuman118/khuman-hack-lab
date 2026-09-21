@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Request a Project | KHUMAN HACK LAB</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050608;
+    color:white;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+}
+
+nav{
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #142018;
+    background:#050608;
+}
+
+.logo{
+    color:#00ff88;
+    font-size:21px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#00ff88;
+}
+
+.container{
+    max-width:750px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading span{
+    color:#00ff88;
+    font-size:13px;
+    letter-spacing:4px;
+}
+
+.heading h1{
+    font-size:44px;
+    margin:15px 0;
+}
+
+.heading p{
+    color:#999;
+    line-height:1.6;
+}
+
+.form-box{
+    background:#080b09;
+    border:1px solid #18251e;
+    border-radius:12px;
+    padding:30px;
+}
+
+label{
+    display:block;
+    color:#ccc;
+    font-size:14px;
+    margin-bottom:8px;
+    margin-top:20px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    background:#050608;
+    color:white;
+    border:1px solid #24352b;
+    border-radius:6px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#00ff88;
+}
+
+textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:28px;
+    padding:15px;
+    background:#00ff88;
+    color:#03100a;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    box-shadow:0 0 25px rgba(0,255,136,.25);
+}
+
+.note{
+    color:#777;
+    font-size:12px;
+    margin-top:15px;
+    line-height:1.5;
+}
+
+@media(max-width:700px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .container{
+        padding:50px 18px;
+    }
+
+    .heading h1{
+        font-size:36px;
+    }
+
+    .form-box{
+        padding:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        KHUMAN HACK LAB
+    </div>
+
+    <div>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <div class="heading">
+
+        <span>START A PROJECT</span>
+
+        <h1>Request a Project</h1>
+
+        <p>
+            Tell me what you need and provide the project details.
+        </p>
+
+    </div>
+
+
+    <div class="form-box">
+
+        <form action="https://formsubmit.co/YOUR_EMAIL_HERE"
+              method="POST">
+
+            <input type="hidden" name="_subject"
+                   value="New Project Request - KHUMAN HACK LAB">
+
+            <input type="hidden" name="_captcha"
+                   value="false">
+
+            <label>Your Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Your Email</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>What do you need?</label>
+
+            <select name="service" required>
+
+                <option value="">
+                    Select a service
+                </option>
+
+                <option>
+                    Website Development
+                </option>
+
+                <option>
+                    AI & Automation
+                </option>
+
+                <option>
+                    Cybersecurity / Security Guidance
+                </option>
+
+                <option>
+                    Website Troubleshooting
+                </option>
+
+                <option>
+                    Other Digital Project
+                </option>
+
+            </select>
+
+
+            <label>Project Details</label>
+
+            <textarea
+                name="message"
+                placeholder="Explain what you need..."
+                required
+            ></textarea>
+
+
+            <button type="submit">
+                SEND PROJECT REQUEST
+            </button>
+
+            <p class="note">
+                Please provide accurate information about your
+                project. Cybersecurity requests must be for
+                systems you own or are authorized to test.
+            </p>
+
+        </form>
+
+    </div>
+
+</main>
+
+</body>
+          </html>
