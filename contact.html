@@ -1,223 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contact | KHUMAN HACK LAB</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    background:#050608;
-    color:white;
-    font-family:Arial,sans-serif;
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
-nav{
-    padding:20px 7%;
+body{
+    background:#030609;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:82px;
+    padding:0 7%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #142018;
-    background:#050608;
+    justify-content:space-between;
+
+    background:#030609;
+    border-bottom:1px solid #17212b;
+
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
-    color:#00ff88;
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-nav a{
-    color:#aaa;
+    color:white;
     text-decoration:none;
-    margin-left:18px;
-    font-size:13px;
+    font-size:23px;
+    font-weight:800;
 }
 
-nav a:hover{
-    color:#00ff88;
+.logo span{
+    color:#168cff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#aeb7c0;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#168cff;
+}
+
+.request{
+    border:1px solid #168cff;
+    padding:10px 17px;
+    border-radius:30px;
+}
+
+.request:hover{
+    background:#168cff;
+    color:white !important;
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:430px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.93),
+            rgba(0,0,0,.60),
+            rgba(0,0,0,.75)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 7%;
+}
+
+.label{
+    color:#168cff;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,72px);
+    letter-spacing:-3px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b4bdc5;
+    max-width:650px;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* CONTACT */
+
+.contact-section{
+    padding:100px 7%;
+    background:#05080c;
 }
 
 .container{
-    max-width:900px;
+    max-width:1200px;
     margin:auto;
-    padding:80px 20px;
 }
 
-.heading{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.heading span{
-    color:#00ff88;
-    font-size:13px;
-    letter-spacing:4px;
-}
-
-.heading h1{
-    font-size:48px;
-    margin:15px 0;
-}
-
-.heading p{
-    color:#999;
-}
-
-.contact-box{
+.contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:25px;
 }
 
+/* CARDS */
+
 .card{
-    background:#080b09;
-    border:1px solid #18251e;
+    background:#080d12;
+    border:1px solid #1c2731;
     border-radius:12px;
-    padding:30px;
+    padding:35px;
+}
+
+.card:hover{
+    border-color:#28618e;
 }
 
 .card h2{
-    color:#00ff88;
+    font-size:28px;
     margin-bottom:15px;
 }
 
 .card p{
-    color:#999;
-    line-height:1.7;
+    color:#7e8993;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* CONTACT INFO */
+
+.info-list{
+    margin-top:30px;
+}
+
+.info{
+    padding:20px 0;
+    border-bottom:1px solid #18232c;
+}
+
+.info:last-child{
+    border-bottom:0;
+}
+
+.info-title{
+    color:#168cff;
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.info-text{
+    color:#d2d7db;
+    font-size:15px;
+}
+
+/* REQUEST CARD */
+
+.request-card{
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(22,140,255,.14),
+            transparent 40%
+        ),
+        #080d12;
 }
 
 .button{
     display:inline-block;
-    margin-top:25px;
-    padding:14px 24px;
-    background:#00ff88;
-    color:#03100a;
+    margin-top:30px;
+
+    background:#168cff;
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:5px;
+
     text-decoration:none;
+
     font-weight:bold;
-    border-radius:6px;
+
+    transition:.25s;
+}
+
+.button:hover{
+    background:#3aa0ff;
+    transform:translateY(-2px);
+}
+
+/* BOTTOM */
+
+.bottom-section{
+    padding:0 7% 100px;
+    background:#05080c;
 }
 
 .note{
-    margin-top:30px;
-    text-align:center;
-    color:#666;
+    max-width:1200px;
+    margin:auto;
+
+    padding:25px;
+
+    border-left:2px solid #168cff;
+
+    background:#080d12;
+
+    color:#78838d;
+
     font-size:13px;
+
+    line-height:1.8;
 }
 
-@media(max-width:700px){
+/* FOOTER */
 
-    nav{
-        padding:18px 5%;
+footer{
+    padding:30px 7%;
+
+    border-top:1px solid #172029;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#606b75;
+
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .navbar{
+        padding:0 6%;
     }
 
-    nav a{
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
         display:none;
+
+        position:absolute;
+        top:82px;
+        left:0;
+
+        width:100%;
+
+        padding:10px 6% 20px;
+
+        background:#030609;
+
+        border-bottom:1px solid #17212b;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:0;
     }
 
-    .logo{
-        font-size:17px;
+    .nav-links.active{
+        display:flex;
     }
 
-    .container{
-        padding:55px 18px;
+    .nav-links a{
+        padding:15px 0;
+        border-bottom:1px solid #172029;
     }
 
-    .heading h1{
-        font-size:38px;
+    .nav-links .request{
+        text-align:center;
+        margin-top:10px;
     }
 
-    .contact-box{
+    .hero{
+        min-height:370px;
+    }
+
+    .hero-content{
+        padding:70px 6%;
+    }
+
+    .contact-section{
+        padding:70px 6%;
+    }
+
+    .contact-grid{
         grid-template-columns:1fr;
     }
+
+    .bottom-section{
+        padding:0 6% 70px;
+    }
+
+    footer{
+        padding-left:6%;
+        padding-right:6%;
+
+        flex-direction:column;
+        gap:10px;
+    }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
-<nav>
 
-    <div class="logo">
-        KHUMAN HACK LAB
-    </div>
+<!-- NAVBAR -->
 
-    <div>
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        KHUMAN <span>HACK LAB</span>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="request.html" class="request">
+            Request a Project
+        </a>
+
     </div>
 
 </nav>
 
 
-<main class="container">
+<!-- HERO -->
 
-    <div class="heading">
+<section class="hero">
 
-        <span>GET IN TOUCH</span>
+    <div class="hero-content">
 
-        <h1>Contact</h1>
+        <div class="label">
+            KHUMAN HACK LAB
+        </div>
+
+        <h1>
+            Contact
+        </h1>
 
         <p>
-            Have a project or digital idea?
-            Send the details through the request page.
+            Have a website, AI or digital project in mind?
+            Send the details through the project request page.
         </p>
 
     </div>
 
-
-    <div class="contact-box">
-
-        <div class="card">
-
-            <h2>Project Requests</h2>
-
-            <p>
-                For website, AI, technology or authorized
-                cybersecurity-related requests, use the
-                project request form.
-            </p>
-
-            <a href="request.html" class="button">
-                SEND A REQUEST
-            </a>
-
-        </div>
+</section>
 
 
-        <div class="card">
+<!-- CONTACT -->
 
-            <h2>KHUMAN HACK LAB</h2>
+<section class="contact-section">
 
-            <p>
-                A personal technology project focused on
-                learning, building and working on digital
-                projects.
-            </p>
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <!-- LEFT -->
+
+            <div class="card">
+
+                <div class="label">
+                    Get In Touch
+                </div>
+
+                <h2>
+                    Let's connect.
+                </h2>
+
+                <p>
+                    For project-related messages, use the
+                    Request a Project page. Your message can
+                    be submitted directly from the website.
+                </p>
+
+
+                <div class="info-list">
+
+                    <div class="info">
+
+                        <div class="info-title">
+                            PROJECTS
+                        </div>
+
+                        <div class="info-text">
+                            Website • AI • Digital Projects
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <div class="info-title">
+                            WORK STYLE
+                        </div>
+
+                        <div class="info-text">
+                            Learn • Build • Improve
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <div class="info-title">
+                            CYBERSECURITY
+                        </div>
+
+                        <div class="info-text">
+                            Authorized & responsible use only
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="card request-card">
+
+                <div class="label">
+                    Project Request
+                </div>
+
+                <h2>
+                    Have an idea?
+                </h2>
+
+                <p>
+                    Tell me what you want to build,
+                    what the project should do, and any
+                    important requirements.
+                </p>
+
+                <a href="request.html" class="button">
+                    Send Project Request →
+                </a>
+
+            </div>
+
 
         </div>
 
     </div>
 
+</section>
 
-    <p class="note">
-        Cybersecurity requests must involve systems you own
-        or have permission to test.
-    </p>
 
-</main>
+<!-- NOTE -->
+
+<section class="bottom-section">
+
+    <div class="note">
+
+        <strong>Note:</strong>
+        KHUMAN HACK LAB is a personal technology project.
+        Project work depends on the requirements and current
+        capabilities. Cybersecurity-related requests must
+        involve systems you own or have explicit permission
+        to test.
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 KHUMAN HACK LAB
+    </div>
+
+    <div>
+        Web • AI • Digital Projects
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+</script>
 
 </body>
 </html>
