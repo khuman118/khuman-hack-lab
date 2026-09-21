@@ -1,287 +1,785 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Request a Project | KHUMAN HACK LAB</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    background:#050608;
-    color:white;
-    font-family:Arial,sans-serif;
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
-nav{
-    padding:20px 7%;
+body{
+    background:#030609;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    height:82px;
+    padding:0 7%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid #142018;
-    background:#050608;
+    justify-content:space-between;
+
+    background:#030609;
+    border-bottom:1px solid #17212b;
+
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
-    color:#00ff88;
-    font-size:21px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-nav a{
-    color:#aaa;
+    color:white;
     text-decoration:none;
-    margin-left:18px;
-    font-size:13px;
+    font-size:23px;
+    font-weight:800;
 }
 
-nav a:hover{
-    color:#00ff88;
+.logo span{
+    color:#168cff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#aeb7c0;
+    text-decoration:none;
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#168cff;
+}
+
+.request-link{
+    border:1px solid #168cff;
+    padding:10px 17px;
+    border-radius:30px;
+}
+
+.request-link:hover{
+    background:#168cff;
+    color:white !important;
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:400px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94),
+            rgba(0,0,0,.60),
+            rgba(0,0,0,.78)
+        ),
+        url("hero-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 7%;
+}
+
+.label{
+    color:#168cff;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,68px);
+    letter-spacing:-3px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b4bdc5;
+    max-width:680px;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* ================= FORM SECTION ================= */
+
+.form-section{
+    padding:90px 7%;
+    background:#05080c;
 }
 
 .container{
-    max-width:750px;
+    max-width:1050px;
     margin:auto;
-    padding:70px 20px;
 }
 
-.heading{
-    text-align:center;
-    margin-bottom:40px;
+.form-layout{
+    display:grid;
+    grid-template-columns:.7fr 1.3fr;
+    gap:25px;
 }
 
-.heading span{
-    color:#00ff88;
-    font-size:13px;
-    letter-spacing:4px;
+/* INFO */
+
+.info-panel{
+    background:#080d12;
+    border:1px solid #1c2731;
+    border-radius:12px;
+    padding:32px;
+    height:max-content;
 }
 
-.heading h1{
-    font-size:44px;
-    margin:15px 0;
+.info-panel h2{
+    font-size:28px;
+    margin-bottom:15px;
 }
 
-.heading p{
-    color:#999;
+.info-panel > p{
+    color:#7d8892;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.steps{
+    margin-top:30px;
+}
+
+.step{
+    padding:18px 0;
+    border-bottom:1px solid #18232c;
+}
+
+.step:last-child{
+    border-bottom:0;
+}
+
+.step-number{
+    color:#168cff;
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.step h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.step p{
+    color:#697580;
+    font-size:12px;
     line-height:1.6;
 }
 
-.form-box{
-    background:#080b09;
-    border:1px solid #18251e;
+/* FORM */
+
+.form-card{
+    background:#080d12;
+    border:1px solid #1c2731;
     border-radius:12px;
-    padding:30px;
+    padding:35px;
 }
 
-label{
-    display:block;
-    color:#ccc;
-    font-size:14px;
+.form-card h2{
+    font-size:28px;
     margin-bottom:8px;
-    margin-top:20px;
 }
 
-input,
-select,
-textarea{
+.form-description{
+    color:#78838d;
+    font-size:13px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.field{
+    margin-bottom:20px;
+}
+
+.field label{
+    display:block;
+    color:#c8d0d6;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.field input,
+.field select,
+.field textarea{
     width:100%;
-    padding:14px;
-    background:#050608;
+
+    padding:14px 15px;
+
+    background:#05080c;
+
     color:white;
-    border:1px solid #24352b;
+
+    border:1px solid #25323d;
+
     border-radius:6px;
+
     outline:none;
-    font-size:15px;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    font-size:14px;
+
+    transition:.25s;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:#00ff88;
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:#168cff;
+    box-shadow:0 0 0 2px rgba(22,140,255,.08);
 }
 
-textarea{
-    min-height:160px;
+.field textarea{
+    min-height:150px;
     resize:vertical;
 }
 
-button{
-    width:100%;
-    margin-top:28px;
-    padding:15px;
-    background:#00ff88;
-    color:#03100a;
-    border:none;
-    border-radius:6px;
-    font-size:15px;
-    font-weight:bold;
+.field select{
     cursor:pointer;
 }
 
-button:hover{
-    box-shadow:0 0 25px rgba(0,255,136,.25);
+.field select option{
+    background:#080d12;
+    color:white;
 }
 
-.note{
-    color:#777;
+/* NOTE */
+
+.security-note{
+    margin:10px 0 22px;
+
+    padding:15px;
+
+    background:#07101a;
+
+    border-left:2px solid #168cff;
+
+    color:#788792;
+
     font-size:12px;
-    margin-top:15px;
-    line-height:1.5;
+
+    line-height:1.7;
 }
 
-@media(max-width:700px){
+/* BUTTON */
 
-    nav{
-        padding:18px 5%;
+.submit-btn{
+    width:100%;
+
+    padding:15px;
+
+    border:0;
+
+    border-radius:6px;
+
+    background:#168cff;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.submit-btn:hover{
+    background:#3aa0ff;
+    transform:translateY(-1px);
+}
+
+/* FOOTER */
+
+footer{
+    padding:30px 7%;
+
+    border-top:1px solid #172029;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#606b75;
+
+    font-size:12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .navbar{
+        padding:0 6%;
     }
 
-    nav a{
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
         display:none;
+
+        position:absolute;
+
+        top:82px;
+        left:0;
+
+        width:100%;
+
+        padding:10px 6% 20px;
+
+        background:#030609;
+
+        border-bottom:1px solid #17212b;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:0;
     }
 
-    .logo{
-        font-size:17px;
+    .nav-links.active{
+        display:flex;
     }
 
-    .container{
-        padding:50px 18px;
+    .nav-links a{
+        padding:15px 0;
+        border-bottom:1px solid #172029;
     }
 
-    .heading h1{
-        font-size:36px;
+    .nav-links .request-link{
+        text-align:center;
+        margin-top:10px;
     }
 
-    .form-box{
-        padding:22px;
+    .hero{
+        min-height:360px;
     }
+
+    .hero-content{
+        padding:65px 6%;
+    }
+
+    .form-section{
+        padding:65px 6%;
+    }
+
+    .form-layout{
+        grid-template-columns:1fr;
+    }
+
+    .info-panel,
+    .form-card{
+        padding:25px;
+    }
+
+    footer{
+        padding-left:6%;
+        padding-right:6%;
+
+        flex-direction:column;
+        gap:10px;
+    }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
-<nav>
 
-    <div class="logo">
-        KHUMAN HACK LAB
-    </div>
+<!-- ================= NAVBAR ================= -->
 
-    <div>
-        <a href="index.html">HOME</a>
-        <a href="services.html">SERVICES</a>
-        <a href="projects.html">PROJECTS</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        KHUMAN <span>HACK LAB</span>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="request.html" class="request-link">
+            Request a Project
+        </a>
+
     </div>
 
 </nav>
 
-<main class="container">
 
-    <div class="heading">
+<!-- ================= HERO ================= -->
 
-        <span>START A PROJECT</span>
+<section class="hero">
 
-        <h1>Request a Project</h1>
+    <div class="hero-content">
+
+        <div class="label">
+            KHUMAN HACK LAB
+        </div>
+
+        <h1>
+            Request a Project
+        </h1>
 
         <p>
-            Tell me what you need and provide the project details.
+            Tell me what you want to build. Share your
+            requirements and project details through the form.
         </p>
 
     </div>
 
-    <div class="form-box">
+</section>
 
-        <form action="https://formsubmit.co/khumanvishwakarma218@gmail.com"
-              method="POST">
 
-            <input type="hidden"
-                   name="_subject"
-                   value="New Project Request - KHUMAN HACK LAB">
+<!-- ================= FORM ================= -->
 
-            <input type="hidden"
-                   name="_captcha"
-                   value="false">
+<section class="form-section">
 
-            <label>Your Name</label>
+    <div class="container">
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                required
-            >
+        <div class="form-layout">
 
-            <label>Your Email</label>
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-            >
+            <!-- INFO -->
 
-            <label>What do you need?</label>
+            <div class="info-panel">
 
-            <select name="service" required>
+                <div class="label">
+                    HOW IT WORKS
+                </div>
 
-                <option value="">
-                    Select a service
-                </option>
+                <h2>
+                    Start a project.
+                </h2>
 
-                <option value="Website Development">
-                    Website Development
-                </option>
+                <p>
+                    Send your requirements using the form.
+                    The request will be sent directly for review.
+                </p>
 
-                <option value="AI & Automation">
-                    AI & Automation
-                </option>
 
-                <option value="Cybersecurity / Security Guidance">
-                    Cybersecurity / Security Guidance
-                </option>
+                <div class="steps">
 
-                <option value="Website Troubleshooting">
-                    Website Troubleshooting
-                </option>
+                    <div class="step">
 
-                <option value="Other Digital Project">
-                    Other Digital Project
-                </option>
+                        <div class="step-number">
+                            01
+                        </div>
 
-            </select>
+                        <h3>
+                            Choose a service
+                        </h3>
 
-            <label>Project Details</label>
+                        <p>
+                            Select the type of project you need.
+                        </p>
 
-            <textarea
-                name="message"
-                placeholder="Explain what you need..."
-                required
-            ></textarea>
+                    </div>
 
-            <button type="submit">
-                SEND PROJECT REQUEST
-            </button>
 
-            <p class="note">
-                Please provide accurate information about your
-                project. Cybersecurity requests must be for
-                systems you own or are authorized to test.
-            </p>
+                    <div class="step">
 
-        </form>
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Explain your idea
+                        </h3>
+
+                        <p>
+                            Describe what you want the project
+                            to do.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Submit
+                        </h3>
+
+                        <p>
+                            Send the request directly through
+                            the website.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="form-card">
+
+                <div class="label">
+                    PROJECT DETAILS
+                </div>
+
+                <h2>
+                    Tell me about it.
+                </h2>
+
+                <p class="form-description">
+                    Please provide accurate information so the
+                    project requirements are easy to understand.
+                </p>
+
+
+                <!-- DO NOT CHANGE THIS FORM ACTION -->
+
+                <form
+                    action="https://formsubmit.co/khumanvishwakarma218@gmail.com"
+                    method="POST"
+                >
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New KHUMAN HACK LAB Project Request"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="_captcha"
+                        value="false"
+                    >
+
+
+                    <!-- NAME -->
+
+                    <div class="field">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label>
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SERVICE -->
+
+                    <div class="field">
+
+                        <label>
+                            Service
+                        </label>
+
+                        <select name="service" required>
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option value="Website Development">
+                                Website Development
+                            </option>
+
+                            <option value="AI & Automation">
+                                AI & Automation
+                            </option>
+
+                            <option value="Cybersecurity">
+                                Cybersecurity
+                            </option>
+
+                            <option value="Website Troubleshooting">
+                                Website Troubleshooting
+                            </option>
+
+                            <option value="Digital Project">
+                                Digital Project
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="field">
+
+                        <label>
+                            Project Details
+                        </label>
+
+                        <textarea
+                            name="message"
+                            placeholder="Explain your project, requirements, features, or problem..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="security-note">
+
+                        <strong>Security note:</strong>
+                        Cybersecurity-related requests must only
+                        involve systems you own or have explicit
+                        permission to test.
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        SEND PROJECT REQUEST →
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
 
     </div>
 
-</main>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        © 2026 KHUMAN HACK LAB
+    </div>
+
+    <div>
+        Web • AI • Digital Projects
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+</script>
 
 </body>
     </html>
